@@ -1,0 +1,16 @@
+-- Table: public.product
+
+-- DROP TABLE public.product;
+
+CREATE TABLE public.product
+(
+    id integer NOT NULL DEFAULT nextval('product_id_seq'::regclass),
+    name character varying(45) COLLATE pg_catalog."default" NOT NULL,
+    price numeric(6,2) NOT NULL,
+    CONSTRAINT product_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.product
+    OWNER to postgres;
